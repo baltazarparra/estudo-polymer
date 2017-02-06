@@ -1,22 +1,31 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
 <dom-module id="first-element">
-    <style media="screen">
-        h1 {
-            color: red;
-        }
-    </style>
     <template>
-        <h1>Hello World</h1>
-        <ul>
-            <li class="item">Hello</li>
-            <li class="item">World</li>
-        </ul>
+    <style>
+    h1 {
+        color: red;
+    }
+    </style>
+    
+        <h1>Hello World {{name}} {{altname}}</h1>
+
     </template>
     
     <script>
         Polymer({
-            is: 'first-element'
+            is: 'first-element',
+            properties: {
+                name: {
+                    type: String,
+                    value: "Ué"
+                },
+                altname: {
+                    type: String,
+                    value: "Head"
+                }
+            }
         });
     </script>
+    
 </dom-module>
