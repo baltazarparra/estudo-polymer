@@ -9,6 +9,8 @@
     </style>
     
         <h1>Hello World {{name}} {{altname}}</h1>
+        <p on-tap="taptap">Click and see, console</p>
+        <h2 id="ref">Event by ref</h2>
 
     </template>
     
@@ -24,6 +26,19 @@
                     type: String,
                     value: "Head"
                 }
+            },
+            listeners: {
+                'tap': 'write',
+                'ref.tap': 'reftap'
+            },
+            write: function() {
+                console.log('Events and Methods, ma"nigga')
+            },
+            taptap: function() {
+                console.log('Declarative way')
+            },
+            reftap: function() {
+                console.log('Reference way')
             }
         });
     </script>
